@@ -3,11 +3,15 @@ const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 
 const Round = require('../src/Round')
+const Deck = require('../src/Deck')
+const Card = require('../src/Card')
+// const Turn = require('../src/Turn')
 
 class Game {
-  constructor() {
-    this.currentRound = new Round(deck)
+  constructor(round) {
+    this.currentRound = {};
   }
+
 
   printMessage(deck, round) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
@@ -17,6 +21,18 @@ class Game {
   printQuestion(round) {
       util.main(round);
   }
+
+  start() {
+    const cards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer))
+    const deck = new Deck(cards)
+    const newRound = new Round (deck)
+    this.currentRound = newRound;
+    this.printMessage(deck, newRound)
+    this.printQuestion(newRound)
+    console.log(newRound)
+  }
 }
 
 module.exports = Game;
+
+//wrap the deck instantiation in a function since it will have to be an iterator method.
