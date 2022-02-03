@@ -25,7 +25,6 @@ beforeEach(() => {
   });
 
   it('should store the current card from deck', function() {
-    round.test();
     expect(round.deck[0]).to.equal(card1);
   });
 
@@ -77,5 +76,15 @@ beforeEach(() => {
     round.takeTurn('Lex')
     result = round.calculatePercentCorrect()
     expect(result).to.equal('33.33')
+  })
+
+  it('should print a message at the end of the round', () => {
+    round.takeTurn('sea otter')
+    round.takeTurn('spleen')
+    round.takeTurn('Lex')
+    result = round.calculatePercentCorrect()
+    expect(result).to.equal('33.33')
+    const endRound = round.endRound()
+    expect(endRound).to.equal(`**Round over!** You answered 33.33% of the questions correctly!`)
   })
 });

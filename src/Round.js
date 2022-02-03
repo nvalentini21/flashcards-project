@@ -28,6 +28,10 @@ class Round {
     const num2 = this.turns
     return (100 - (num1/num2 * 100)).toFixed(2)
   }
+
+  endRound() {
+    return `**Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
+  }
 }
 
 module.exports = Round;
