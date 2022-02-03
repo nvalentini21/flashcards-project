@@ -29,9 +29,9 @@ beforeEach(() => {
     expect(round.deck[0]).to.equal(card1);
   });
 
-  it('should have a default turn count of 1', () => {
-    expect(round.turn).to.equal(1);
-  })
+  // it('should have a default turn count of 1', () => {
+  //   expect(round.turn).to.equal(1);
+  // })
 
   it('should return the current card', () => {
     round.returnCurrentCard()
@@ -39,17 +39,43 @@ beforeEach(() => {
   })
 
   it('should instantiate a new turn when a guess is made', () => {
-    var roundTurn = round.takeTurn()
-    expect(roundTurn).to.be.an.instanceof(Turn)
-  })
-
-  it('add 1 to the turn count when a guess is made', () => {
     round.takeTurn()
-    expect(round.turn).to.equal(2)
+    expect(round.newTurn).to.be.an.instanceof(Turn)
   })
 
-  it('update the current card to the next card in the deck', () => {
+  it('should add 1 to the turn count when a guess is made', () => {
+    round.takeTurn()
+    expect(round.turns).to.equal(1)
+  })
+
+  it('should update the current card to the next card in the deck', () => {
     round.takeTurn()
     expect(round.deck[0]).to.equal(card2)
+  })
+
+  it('should keep track of incorrect guesses', () => {
+    expect(round.incorrectGuesses.length).to.equal(0)
+  })
+
+  it('should should evaluate and record an incorrect guess', () => {
+    const result = round.takeTurn('pug')
+    const result2 = round.takeTurn('spleen')
+    expect(round.incorrectGuesses).to.eql([1, 14])
+    expect(result).to.equal('incorrect!')
+    expect(round.incorrectGuesses.length).to.equal(2)
+  })
+
+  it('should evaluate a correct guess', () => {
+    const result = round.takeTurn('sea otter')
+    expect(round.incorrectGuesses).to.eql([])
+    expect(result).to.equal('correct!')
+  })
+
+  it('should evaluate the percentage of correct cards', () => {
+    round.takeTurn('sea otter')
+    round.takeTurn('spleen')
+    round.takeTurn('Lex')
+    result = round.calculatePercentCorrect()
+    expect(result).to.equal('33.33')
   })
 });
