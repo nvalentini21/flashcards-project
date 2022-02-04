@@ -1,71 +1,48 @@
-# FlashCards Starter Kit
 
-## Fork This Repo
+# :star: **FlashCard Project** :star:
+___
+## Abstract
 
-On the top right corner of this page, click the **Fork** button.
-
-## Setup
-
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
-
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
-
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
-
-```bash
-npm install
-```
-
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
-
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
-
-```bash
-Your project is running...
-```
-
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
-
-
-## Where to Add Your Code
-
-### JavaScript
-
-**Create all of your feature code files in the `src` directory.**
-
-We will be using the `module.exports` and `require` syntax to share code across files.
-
-## How to View Your Code in Action
-
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
-
-```bash
-node index.js
-```
-
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
+Enter the illusive world of console trivia! Test your knowledge of javascript foundations right in your own console.
 
 ---
+## Links
+* [GitHub Repository](https://github.com/nvalentini21/flashcards-project)
+---
+## Contributors
+* [Nicole Valentini](https://github.com/nvalentini21)
+---
+## Tech Used
+* Javascript
+* Object Oriented Programming
+* Git/GitHub
+* node.js
 
-## Test Files Organization
+## Installation/Set-Up
+Click this [link](https://github.com/nvalentini21/flashcards-project) to view the gitHub repository.
+To view code on the text editor of your choice (I used atom to construct this code):
 
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
+`Clone` [this repository](https://github.com/nvalentini21/flashcards-project) in your terminal by entering using `git clone https://github.com/nvalentini21/flashcards-project` and then `cd flashcard-project`. Run `node.js` to begin the flashcard set in your console.
 
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
+---
+## How To Play
+A welcome message and flashcard will appear in your console. Enter the number of the answer choice and press `enter` to see if you are correct!
 
-## Running Your Tests
+![Flashcard1](https://media.giphy.com/media/WtGJssD3nno08byQ9a/giphy.gif)
 
-Run your test suite using the command:
+After displaying a message of 'incorrect' or 'correct', press enter again to display the next flashcard. Keep playing until the set is up!
 
-```bash
-npm test
-```
+![Flashcard2](https://media.giphy.com/media/LTcoKoFETOCsaSFWAt/giphy.gif)
 
-The test results will output to the terminal.
+After answering all 30 questions, a final message will appear that contains the percentage of questions you answered correctly. Congratulations, you have completed the flashcard set!
 
+![Flashcard3](https://media.giphy.com/media/l9sdJAkrv2dxZmyPix/giphy.gif)
 
+---
+## Credits
+* [*Turing School of Software and Design*](turing.edu)
+* My project manager, Nik Seif. [@NikSeif](https://github.com/niksseif)
+* My code reviewers:
+  * Alyssa Bull [@alyssabull](https://github.com/alyssabull)
+  
+Thank you so much!
