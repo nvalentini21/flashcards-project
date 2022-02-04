@@ -1,11 +1,9 @@
 const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
-
 const Round = require('../src/Round')
 const Deck = require('../src/Deck')
 const Card = require('../src/Card')
-// const Turn = require('../src/Turn')
 
 class Game {
   constructor(round) {
@@ -34,5 +32,3 @@ class Game {
 }
 
 module.exports = Game;
-
-//wrap the deck instantiation in a function since it will have to be an iterator method.
