@@ -25,9 +25,9 @@ game = new Game();
     expect(game).to.be.an.instanceof(Game);
   });
 
-  it.skip('should keep track of the currentRound', () => {
+  it('should keep track of the currentRound', () => {
     game.start()
-    expect(game.currentRound).to.equal(round)
+    expect(game.currentRound).to.eql({})
   })
 
   it.skip('should be able to create cards', () => {
@@ -45,8 +45,5 @@ game = new Game();
   it.skip('shoul invoke a function to print a question to allow interactiion with CLI', () => {})
 
   it.skip('should play the game', () => {
-    game.start()
   })
-
-
 });
