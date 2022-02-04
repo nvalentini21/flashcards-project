@@ -9,8 +9,8 @@ describe('Deck', function() {
 
   it('should be a function', () => {
     const deck = new Deck();
-    expect(Deck).to.be.a('function');
-  });
+    expect(Deck).to.be.a('function')
+  })
 
   it('should be an instance of Deck',() => {
     const deck = new Deck();
@@ -26,4 +26,4 @@ describe('Deck', function() {
       deck.countCards()
       expect(deck.countCards()).to.equal(3)
   })
-})
+});

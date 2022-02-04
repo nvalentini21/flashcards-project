@@ -8,13 +8,13 @@ const Turn = require('../src/Turn')
 
 describe('Round', function() {
 
-beforeEach(() => {
-card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-deck = new Deck([card1, card2, card3])
-round = new Round(deck);
-});
+  beforeEach(() => {
+    card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+    deck = new Deck([card1, card2, card3])
+    round = new Round(deck);
+    });
 
   it('should be a function', function() {
     expect(Round).to.be.a('function');
@@ -27,10 +27,6 @@ round = new Round(deck);
   it('should store the current card from deck', function() {
     expect(round.deck[0]).to.equal(card1);
   });
-
-  // it('should have a default turn count of 1', () => {
-  //   expect(round.turn).to.equal(1);
-  // })
 
   it('should return the current card', () => {
     round.returnCurrentCard()
@@ -75,7 +71,6 @@ round = new Round(deck);
     round.takeTurn('spleen')
     round.takeTurn('Lex')
     const result = round.calculatePercentCorrect()
-
     expect(result).to.equal('33.33')
   })
 

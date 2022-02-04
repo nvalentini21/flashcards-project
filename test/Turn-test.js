@@ -22,8 +22,6 @@ describe('Turn', function() {
     expect(turn.guess).to.equal('Random users guess');
   })
 
-  //lines 19-30. See if you can just use Card, or if you need the card instance...)
-
   it('should keep track of the current card at play', () => {
     const turn = new Turn('Random users guess', Card);
     expect(turn.currentCard).to.equal(Card);
@@ -33,7 +31,6 @@ describe('Turn', function() {
     const turn = new Turn('Random users guess', Card);
     turn.returnGuess();
     expect(turn.returnGuess()).to.equal('Random users guess');
-    //this is a method
   })
 
   it('should return the current card', () => {
@@ -67,6 +64,5 @@ describe('Turn', function() {
     turn2.evaluateGuess();
     turn2.giveFeedback();
     expect(turn2.giveFeedback()).to.equal('incorrect!')
-    //this is a method
   })
 })
