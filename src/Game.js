@@ -27,7 +27,6 @@ class Game {
     this.currentRound = newRound;
     this.printMessage(deck, newRound)
     this.printQuestion(newRound)
-    console.log(newRound)
   }
 }
 
